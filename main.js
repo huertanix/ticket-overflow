@@ -14,7 +14,7 @@ var ticketOverflow = {
     while (question_list.hasChildNodes()) {
       question_list.removeChild(node.lastChild);
     }
-  }
+  },
 
   showQuestionList: function(e) {
     this.clearQuestionList();
@@ -34,12 +34,10 @@ var ticketOverflow = {
         question_submit.innerHTML = 'Bump to First Class';
         question_submit.setAttribute('onclick', this.submitQuestion(question_id));
 
-        document.getElementById('question-list').appendChild(question);
+        question.appendChild(question_link);
+        question.appendChild(question_submit);
+        question_list.appendChild(question);
       }
-
-      question.appendChild(question_link);
-      question.appendChild(question_submit);
-      question_list.appendChild(question);
     }
     else {
       var no_questions = document.createElement('li');
@@ -54,7 +52,7 @@ var ticketOverflow = {
     // Do a post to Google Support somehow
     alert('Question ' + question_id + ' sent to the googles');
     //localStorage.setItem();
-  }
+  },
 };
 
 document.addEventListener('DOMContentLoaded', function () {
