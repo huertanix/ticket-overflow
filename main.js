@@ -49,9 +49,11 @@ var ticketOverflow = {
   },
 
   submitQuestion: function(question_id) {
-    // Do a post to Google Support somehow
+    // Do a post to Google Support somehow--need support form markup dump for this
     alert('Question ' + question_id + ' sent to the googles');
-    //localStorage.setItem();
+    //var submitted_questions[] = JSON.parse(localStorage.setItem('submitted_questions'));
+    //submitted_questions.push(question_id);
+    //localStorage.setItem('submitted_questions', JSON.stringify(submitted_questions));
   },
 };
 
