@@ -6,6 +6,7 @@
   "version": "1.0",
 
   "permissions": [
+    "https://api.stackexchange.com/",
     "https://support.google.com/"
   ],
   "browser_action": {
@@ -16,5 +17,5 @@
     "16": "ticket_overflow_16px.png",
     "48": "ticket_overflow_48px.png",
     "128": "ticket_overflow_128px.png"
-  },
+  }
 }

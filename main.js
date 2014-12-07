@@ -12,7 +12,7 @@ var ticketOverflow = {
     var question_list = document.getElementById('question-list');
     
     while (question_list.hasChildNodes()) {
-      question_list.removeChild(node.lastChild);
+      question_list.removeChild(question_list.lastChild);
     }
   },
 
@@ -22,17 +22,18 @@ var ticketOverflow = {
     var questions = JSON.parse(e.target.responseText);
     var question_list = document.getElementById('question-list');
 
-    if (questions.items.length > 0) {
-      for (var i = 0; i < questions.items.length; i++) {
+    if (Object.keys(questions.items).length > 0) {
+      //for (var i = 0; i < questions.items.length; i++) {
+      for(var q in questions.items) {
         var question = document.createElement('li');
         var question_link = document.createElement('a');
         var question_submit = document.createElement('button');
 
-        question.id = 'q_' + questions.items[i].question_id;
-        question_link.href = questions.items[i].link;
-        question_link.innerHTML = questions.items[i].title;
+        question.id = 'q_' + q["question_id"];
+        question_link.href = q["link"];
+        question_link.innerHTML = q["title"];
         question_submit.innerHTML = 'Bump to First Class';
-        question_submit.setAttribute('onclick', this.submitQuestion(question_id));
+        ////question_submit.setAttribute('onclick', this.submitQuestion(question_id));
 
         question.appendChild(question_link);
         question.appendChild(question_submit);
@@ -58,5 +59,5 @@ var ticketOverflow = {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-  ticketOverflow.showQuestionList();
+  ticketOverflow.getQuestions();
 });
