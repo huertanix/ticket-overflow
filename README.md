@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/huertanix/ticket-overflow/master/ticket_overflow_128px.png)
+![alt tag](http://www.davidhuerta.me/images/ticket_overflow_logo.png)
 
 ticket-overflow
 ===============
