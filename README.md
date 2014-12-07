@@ -1,4 +1,4 @@
-![alt tag](https://raw.github.com/huertanix/ticket-overflow/master/ticket_overflow_128px.png)
+![alt tag](https://raw.githubusercontent.com/huertanix/ticket-overflow/master/ticket_overflow_128px.png)
 
 ticket-overflow
 ===============
