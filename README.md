@@ -1,3 +1,5 @@
+![alt tag](https://raw.github.com/huertanix/ticket-overflow/master/ticket_overflow_128px.png)
+
 ticket-overflow
 ===============
 
