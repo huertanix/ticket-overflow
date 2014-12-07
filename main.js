@@ -1,5 +1,7 @@
 var ticketOverflow = {
-  so_search_url: 'https://api.stackexchange.com/2.2/search/advanced?order=asc&sort=creation&answers=0&tagged=gcloud&site=stackoverflow',
+  so_tag: 'gcloud',
+  
+  so_search_url: 'https://api.stackexchange.com/2.2/search/advanced?order=asc&sort=creation&answers=0&tagged=' + this.so_tag + '&site=stackoverflow',
 
   getQuestions: function() {
     var req = new XMLHttpRequest();
@@ -26,15 +28,22 @@ var ticketOverflow = {
       //for (var i = 0; i < questions.items.length; i++) {
       for(var q in questions.items) {
         var question = document.createElement('li');
+        var question_date = document.createElement('span');
         var question_link = document.createElement('a');
         var question_submit = document.createElement('button');
 
-        question.id = 'q_' + q["question_id"];
-        question_link.href = q["link"];
-        question_link.innerHTML = q["title"];
+        question.id = 'q_' + questions.items[q].question_id;
+        question_date.className = 'created-date';
+        // SO API delivers epoch time in seconds, JS wants epoch time in milliseconds
+        var created = new Date(questions.items[q].creation_date * 1000);
+        question_date.innerHTML = (created.getMonth() + 1) + "/" + created.getDate() + "/" + created.getFullYear();
+        question_link.href = questions.items[q].link;
+        question_link.target = '_blank';
+        question_link.innerHTML = questions.items[q].title;
         question_submit.innerHTML = 'Bump to First Class';
-        ////question_submit.setAttribute('onclick', this.submitQuestion(question_id));
+        //question_submit.setAttribute('onclick', 'ticketOverflow.submitQuestion(' + question_id + ')');
 
+        question.appendChild(question_date);
         question.appendChild(question_link);
         question.appendChild(question_submit);
         question_list.appendChild(question);
