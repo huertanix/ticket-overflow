@@ -11,5 +11,10 @@
   "browser_action": {
     "default_icon": "ticket_overflow_128px.png",
     "default_popup": "popup.html"
-  }
+  },
+  "icons": {
+    "16": "ticket_overflow_16px.png",
+    "48": "ticket_overflow_48px.png",
+    "128": "ticket_overflow_128px.png"
+  },
 }
