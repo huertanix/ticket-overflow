@@ -1,6 +1,6 @@
 ![alt tag](http://www.davidhuerta.me/images/ticket_overflow_logo.png)
 
-ticket-overflow
+Ticket Overflow
 ===============
 
 Snowpiercer, but for Google Cloud Support
