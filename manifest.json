@@ -9,7 +9,7 @@
     "https://support.google.com/"
   ],
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "ticket_overflow_128px.png",
     "default_popup": "popup.html"
   }
 }
