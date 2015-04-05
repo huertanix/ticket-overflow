@@ -1,11 +1,13 @@
 var ticketOverflow = {
-  so_tag: 'gcloud',
-  
-  so_search_url: 'https://api.stackexchange.com/2.2/search/advanced?order=asc&sort=creation&answers=0&tagged=' + this.so_tag + '&site=stackoverflow',
+  //so_tag: document.getElementById('tag-search').value, //'gcloud',
+  //so_search_url: 'https://api.stackexchange.com/2.2/search/advanced?order=asc&sort=creation&answers=0&tagged=' + this.so_tag + '&site=stackoverflow',
 
   getQuestions: function() {
     var req = new XMLHttpRequest();
-    req.open("GET", this.so_search_url, true);
+    var so_tag = document.getElementById('tag-search').value;
+    var so_search_url = 'https://api.stackexchange.com/2.2/search/advanced?order=asc&sort=creation&answers=0&tagged=' + so_tag + '&site=stackoverflow'
+    
+    req.open("GET", so_search_url, true);
     req.onload = this.showQuestionList.bind(this);
     req.send(null);
   },
@@ -67,6 +69,27 @@ var ticketOverflow = {
   },
 };
 
+//document.getElementById('tag-search-go').addEventListener('click', ticketOverflow.getQuestions(), false);
+
+//document.getElementById('tag-search').addEventListener('keydown', function (ev) {
+  //if (ev.keyCode === 13) {
+    //alert('sup');
+    //ticketOverflow.getQuestions();
+  //}
+//});
+
 document.addEventListener('DOMContentLoaded', function () {
   ticketOverflow.getQuestions();
+
+  document.getElementById('tag-search-go').addEventListener('click', function() { 
+    //console.log('clicked');
+    ticketOverflow.getQuestions();
+  }, false);
+
+  document.getElementById('tag-search').addEventListener('keydown', function (ev) {
+    if (ev.keyCode === 13) {
+      //alert('sup');
+      ticketOverflow.getQuestions();
+    }
+  }, false);
 });

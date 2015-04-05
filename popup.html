@@ -10,6 +10,16 @@
         overflow-y: scroll;
       }
       
+      #tag-search {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      
+      #tag-search-glyph {
+        -webkit-transform: rotate(45deg);
+        font-weight: bold;
+      }
+      
       a {
         color:#333;
         font-weight:bold;
@@ -58,12 +68,15 @@
         margin-top:10px;
       }
     </style>
-    
-    <script src="main.js"></script>
   </head>
   <body>
+    <!-- Use unicode to display a magnifying glass next to Search. -->
+    <!--<label for="tag-search" id="tag-search-glyph" name="tag-search-glyph">&#9906;</label>-->
+    <input type="search" name="tag-search" id="tag-search" placeholder="Search by tag" value="gcloud" />
+    <input type="button" name="tag-search-go" id="tag-search-go" value="Search" />
     <ul id="question-list">
-      <li>Digging up graveyard of unanswered questions...</li>
+      <li>Digging up unanswered questions...</li>
     </ul>
+    <script src="main.js"></script>
   </body>
 </html>
