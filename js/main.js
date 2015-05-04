@@ -42,8 +42,8 @@ var ticketOverflow = {
         question_link.href = questions.items[q].link;
         question_link.target = '_blank';
         question_link.innerHTML = questions.items[q].title;
-        question_submit.innerHTML = 'Bump to First Class';
-        //question_submit.setAttribute('onclick', 'ticketOverflow.submitQuestion(' + question_id + ')');
+        question_submit.innerHTML = 'Open Support Ticket';
+        question_submit.setAttribute('onclick', 'fillSupportTicket.submitQuestion(' + questions.items[q].question_id + ')');
 
         question.appendChild(question_date);
         question.appendChild(question_link);
@@ -60,9 +60,18 @@ var ticketOverflow = {
     }
   },
 
-  submitQuestion: function(question_id) {
+  fillSupportTicket: function(question_id) {
     // Do a post to Google Support somehow--need support form markup dump for this
-    alert('Question ' + question_id + ' sent to the googles');
+    // Actually that won't work since its not a plain REST endpoint; It's Google App Engine.
+    // Instead, fill in deets.
+    chrome.tabs.query({ active: true, currentWindow: true }, function(arrayOfTabs) {
+        //var activeTab = arrayOfTabs[0];
+        var activeTabUrl = arrayOfTabs[0].url; // or do whatever you need
+        alert(activeTabUrl);
+     });
+    
+    //chrome.tabs.create({ url: 'https://enterprise.google.com/supportcenter/managecases?ref=cloud' });
+    
     //var submitted_questions[] = JSON.parse(localStorage.setItem('submitted_questions'));
     //submitted_questions.push(question_id);
     //localStorage.setItem('submitted_questions', JSON.stringify(submitted_questions));

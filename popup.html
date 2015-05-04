@@ -2,72 +2,7 @@
 <html>
   <head>
     <title>Ticket Overflow</title>
-    <style>
-      body {
-        min-width: 357px;
-        max-width: 600px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-      }
-      
-      #tag-search {
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-      
-      #tag-search-glyph {
-        -webkit-transform: rotate(45deg);
-        font-weight: bold;
-      }
-      
-      a {
-        color:#333;
-        font-weight:bold;
-        text-decoration:none;
-        line-height:20px;
-      }
-      
-      a:hover {
-        text-decoration:underline;
-      }
-      
-      a:visited {
-        color:#CCC;
-      }
-      
-      #question-list {
-        margin:0;
-        padding:0;
-      }
-      
-      #question-list li {
-        list-style-type:none;
-        padding:10px;
-        margin:0;
-      }
-      
-      #question-list li:nth-child(odd) {
-        background-color:#f1f1f1;
-      }
-      
-      #question-list li:hover {
-        background-color: #fff8dc;
-      }
-      
-      .created-date {
-        color:#fff;
-        background-color:#f90;
-        margin-right:7px;
-        margin-bottom:5px;
-        padding:3px;
-        font-size:10px;
-      }
-      
-      #question-list li button {
-        display:block;
-        margin-top:10px;
-      }
-    </style>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
   </head>
   <body>
     <!-- Use unicode to display a magnifying glass next to Search. -->
@@ -77,6 +12,6 @@
     <ul id="question-list">
       <li>Digging up unanswered questions...</li>
     </ul>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -7,7 +7,7 @@ Snowpiercer, but for Google Cloud Support
 
 Ticket Overflow is a Chrome/Chromium extension which lets you find unanswered Google Cloud questions on Stack Overflow and submit them to Google Cloud support as support tickets if you have a Google Cloud Silver, Gold, or Platinum support plan. Using a weird Kickstarter campaign, I bought a month of Google Gold support to send the unanswered questions I find to their ticketed support system and add answers back into StackOverflow.
 
-I'm lazy and not going to do it all by hand; This Chrome extension will let me (and you if you're a baller) take neglected StackOverflow questions and bump them up to first class with a few clicks.
+The Kickstarter campaign got the attention at some folks at Google and they are now answering questions tagged with google-translate and answering them. Yay! This extension will let anyone wanting to help answer questions find them easily by searching for their tag and filling out a support request ticket if they have a support plan.
 
 License
 -------

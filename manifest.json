@@ -7,7 +7,8 @@
 
   "permissions": [
     "https://api.stackexchange.com/",
-    "https://support.google.com/"
+    "https://enterprise.google.com/",
+    "tabs"
   ],
   "browser_action": {
     "default_icon": "ticket_overflow_128px.png",
